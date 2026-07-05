@@ -1,0 +1,435 @@
+[
+  {
+    "id": "fc1",
+    "courseId": "cs101",
+    "topic": "Data Structures & Algorithms",
+    "question": "What is the time complexity of searching for an element in a balanced BST?",
+    "answer": "O(log n)",
+    "explanation": "In a balanced binary search tree, each comparison removes about half of the remaining possibilities."
+  },
+  {
+    "id": "fc2",
+    "courseId": "cs101",
+    "topic": "Data Structures & Algorithms",
+    "question": "What does FIFO mean in a queue?",
+    "answer": "First In, First Out",
+    "explanation": "A queue processes elements in the same order they were added, like a line of people."
+  },
+  {
+    "id": "fc3",
+    "courseId": "bio101",
+    "topic": "Genetics",
+    "question": "What is DNA made of?",
+    "answer": "Nucleotides",
+    "explanation": "DNA is composed of nucleotide building blocks containing a sugar, phosphate, and nitrogen base."
+  },
+  {
+    "id": "fc4",
+    "courseId": "hist101",
+    "topic": "Industrial Revolution",
+    "question": "What powered the first factories during the Industrial Revolution?",
+    "answer": "Steam engines",
+    "explanation": "Steam power transformed manufacturing by providing reliable mechanical energy for mills and factories."
+  }
+  ,
+  {
+    "id": "fc5",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is a computer?",
+    "answer": "A computer is an electronic device that accepts data, processes it according to instructions, stores it, and produces meaningful information.",
+    "explanation": "A computer is an electronic device that accepts data, processes it according to instructions, stores it, and produces meaningful information."
+  },
+  {
+    "id": "fc6",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is data?",
+    "answer": "Data are raw facts and figures that have not yet been processed into meaningful information.",
+    "explanation": "Data are raw facts and figures that have not yet been processed into meaningful information."
+  },
+  {
+    "id": "fc7",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is information?",
+    "answer": "Information is processed data that is meaningful and useful for decision-making.",
+    "explanation": "Information is processed data that is meaningful and useful for decision-making."
+  },
+  {
+    "id": "fc8",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What are the three main stages of the Information Processing Cycle?",
+    "answer": "Input → Process → Output (with Storage supporting the cycle).",
+    "explanation": "Input → Process → Output (with Storage supporting the cycle)."
+  },
+  {
+    "id": "fc9",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What does GIGO stand for?",
+    "answer": "Garbage In, Garbage Out — incorrect input produces incorrect output.",
+    "explanation": "Garbage In, Garbage Out — incorrect input produces incorrect output."
+  },
+  {
+    "id": "fc10",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "List four characteristics of a computer.",
+    "answer": "Speed, Accuracy, Diligence, Automation.",
+    "explanation": "Speed, Accuracy, Diligence, Automation."
+  },
+  {
+    "id": "fc11",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is computer automation?",
+    "answer": "The ability of a computer to execute tasks automatically once instructions have been provided.",
+    "explanation": "The ability of a computer to execute tasks automatically once instructions have been provided."
+  },
+  {
+    "id": "fc12",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Name the five generations of computers.",
+    "answer": "Vacuum Tubes, Transistors, Integrated Circuits, Microprocessors, Artificial Intelligence.",
+    "explanation": "Vacuum Tubes, Transistors, Integrated Circuits, Microprocessors, Artificial Intelligence."
+  },
+  {
+    "id": "fc13",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Which electronic component was used in first-generation computers?",
+    "answer": "Vacuum Tubes.",
+    "explanation": "Vacuum Tubes."
+  },
+  {
+    "id": "fc14",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Which component replaced vacuum tubes in second-generation computers?",
+    "answer": "Transistors.",
+    "explanation": "Transistors."
+  },
+  {
+    "id": "fc15",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Which technology characterized third-generation computers?",
+    "answer": "Integrated Circuits (ICs).",
+    "explanation": "Integrated Circuits (ICs)."
+  },
+  {
+    "id": "fc16",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Which technology introduced the fourth generation?",
+    "answer": "Microprocessors.",
+    "explanation": "Microprocessors."
+  },
+  {
+    "id": "fc17",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is the main focus of fifth-generation computers?",
+    "answer": "Artificial Intelligence (AI).",
+    "explanation": "Artificial Intelligence (AI)."
+  },
+  {
+    "id": "fc18",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who is known as the Father of the Computer?",
+    "answer": "Charles Babbage.",
+    "explanation": "Charles Babbage."
+  },
+  {
+    "id": "fc19",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who is regarded as the first computer programmer?",
+    "answer": "Ada Lovelace.",
+    "explanation": "Ada Lovelace."
+  },
+  {
+    "id": "fc20",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is the Abacus?",
+    "answer": "The earliest known counting device used for basic arithmetic.",
+    "explanation": "The earliest known counting device used for basic arithmetic."
+  },
+  {
+    "id": "fc21",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What was Herman Hollerith famous for?",
+    "answer": "Inventing the Punch Card Machine used for census data processing.",
+    "explanation": "Inventing the Punch Card Machine used for census data processing."
+  },
+  {
+    "id": "fc22",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is a Supercomputer?",
+    "answer": "The fastest and most powerful type of computer used for complex scientific computations.",
+    "explanation": "The fastest and most powerful type of computer used for complex scientific computations."
+  },
+  {
+    "id": "fc23",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is a Mainframe Computer?",
+    "answer": "A large computer that supports many users and processes massive amounts of data simultaneously.",
+    "explanation": "A large computer that supports many users and processes massive amounts of data simultaneously."
+  },
+  {
+    "id": "fc24",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is a Microcomputer?",
+    "answer": "A personal computer designed for use by one individual.",
+    "explanation": "A personal computer designed for use by one individual."
+  },
+  {
+    "id": "fc25",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Mobile Learning (M-Learning)?",
+    "answer": "Learning that takes place through portable digital devices anytime and anywhere.",
+    "explanation": "Learning that takes place through portable digital devices anytime and anywhere."
+  },
+  {
+    "id": "fc26",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "State two advantages of Mobile Learning.",
+    "answer": "Flexibility and Anywhere/Anytime Access.",
+    "explanation": "Flexibility and Anywhere/Anytime Access."
+  },
+  {
+    "id": "fc27",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Mobile Application Development?",
+    "answer": "The process of designing, developing, testing, deploying, and maintaining mobile applications.",
+    "explanation": "The process of designing, developing, testing, deploying, and maintaining mobile applications."
+  },
+  {
+    "id": "fc28",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What are the six stages of Mobile App Development?",
+    "answer": "Planning, Design, Development, Testing, Deployment, Maintenance.",
+    "explanation": "Planning, Design, Development, Testing, Deployment, Maintenance."
+  },
+  {
+    "id": "fc29",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is an Educational Mobile Application?",
+    "answer": "A mobile application specifically designed to facilitate teaching and learning.",
+    "explanation": "A mobile application specifically designed to facilitate teaching and learning."
+  },
+  {
+    "id": "fc30",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Give three examples of Educational Mobile Apps.",
+    "answer": "Google Classroom, Moodle, Duolingo.",
+    "explanation": "Google Classroom, Moodle, Duolingo."
+  },
+  {
+    "id": "fc31",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Behaviorism?",
+    "answer": "A learning theory that explains learning through stimulus, response, and reinforcement.",
+    "explanation": "A learning theory that explains learning through stimulus, response, and reinforcement."
+  },
+  {
+    "id": "fc32",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who developed Behaviorism?",
+    "answer": "B.F. Skinner.",
+    "explanation": "B.F. Skinner."
+  },
+  {
+    "id": "fc33",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Cognitivism?",
+    "answer": "A learning theory focusing on internal mental processes such as thinking, memory, and problem-solving.",
+    "explanation": "A learning theory focusing on internal mental processes such as thinking, memory, and problem-solving."
+  },
+  {
+    "id": "fc34",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who is associated with Cognitivism?",
+    "answer": "Jean Piaget.",
+    "explanation": "Jean Piaget."
+  },
+  {
+    "id": "fc35",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Constructivism?",
+    "answer": "The theory that learners actively construct knowledge through experience.",
+    "explanation": "The theory that learners actively construct knowledge through experience."
+  },
+  {
+    "id": "fc36",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who proposed Social Learning Theory?",
+    "answer": "Albert Bandura.",
+    "explanation": "Albert Bandura."
+  },
+  {
+    "id": "fc37",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Universal Design for Learning (UDL)?",
+    "answer": "A framework for designing learning experiences that accommodate all learners.",
+    "explanation": "A framework for designing learning experiences that accommodate all learners."
+  },
+  {
+    "id": "fc38",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What are the three principles of UDL?",
+    "answer": "Multiple Means of Representation, Engagement, and Action & Expression.",
+    "explanation": "Multiple Means of Representation, Engagement, and Action & Expression."
+  },
+  {
+    "id": "fc39",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who proposed Connectivism?",
+    "answer": "George Siemens.",
+    "explanation": "George Siemens."
+  },
+  {
+    "id": "fc40",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Experiential Learning?",
+    "answer": "Learning through direct experience, reflection, conceptualization, and experimentation.",
+    "explanation": "Learning through direct experience, reflection, conceptualization, and experimentation."
+  },
+  {
+    "id": "fc41",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Who developed Experiential Learning Theory?",
+    "answer": "David Kolb.",
+    "explanation": "David Kolb."
+  },
+  {
+    "id": "fc42",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What does ADDIE stand for?",
+    "answer": "Analysis, Design, Development, Implementation, Evaluation.",
+    "explanation": "Analysis, Design, Development, Implementation, Evaluation."
+  },
+  {
+    "id": "fc43",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What happens during the Analysis phase of ADDIE?",
+    "answer": "Learner needs, learning goals, and instructional problems are identified.",
+    "explanation": "Learner needs, learning goals, and instructional problems are identified."
+  },
+  {
+    "id": "fc44",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What happens during the Development phase of ADDIE?",
+    "answer": "Learning materials, multimedia, and instructional resources are created.",
+    "explanation": "Learning materials, multimedia, and instructional resources are created."
+  },
+  {
+    "id": "fc45",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is the purpose of the Evaluation phase in ADDIE?",
+    "answer": "To assess the effectiveness of instruction and identify improvements.",
+    "explanation": "To assess the effectiveness of instruction and identify improvements."
+  },
+  {
+    "id": "fc46",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What does SAM stand for?",
+    "answer": "Successive Approximation Model.",
+    "explanation": "Successive Approximation Model."
+  },
+  {
+    "id": "fc47",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is the main advantage of SAM?",
+    "answer": "Rapid prototyping with continuous feedback and improvement.",
+    "explanation": "Rapid prototyping with continuous feedback and improvement."
+  },
+  {
+    "id": "fc48",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is User-Centered Design (UCD)?",
+    "answer": "A design approach that focuses on users' needs, abilities, and experiences throughout development.",
+    "explanation": "A design approach that focuses on users' needs, abilities, and experiences throughout development."
+  },
+  {
+    "id": "fc49",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Mobile-First Design?",
+    "answer": "Designing applications for mobile devices before adapting them to larger screens.",
+    "explanation": "Designing applications for mobile devices before adapting them to larger screens."
+  },
+  {
+    "id": "fc50",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Why is Accessibility important in educational apps?",
+    "answer": "It ensures learners of different abilities can effectively access and use the application.",
+    "explanation": "It ensures learners of different abilities can effectively access and use the application."
+  },
+  {
+    "id": "fc51",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Gamification?",
+    "answer": "The use of game elements like points, badges, and leaderboards to increase learner motivation.",
+    "explanation": "The use of game elements like points, badges, and leaderboards to increase learner motivation."
+  },
+  {
+    "id": "fc52",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "What is Learning Analytics?",
+    "answer": "The collection and analysis of learner data to improve teaching and learning outcomes.",
+    "explanation": "The collection and analysis of learner data to improve teaching and learning outcomes."
+  },
+  {
+    "id": "fc53",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Why is LMS integration important?",
+    "answer": "It enables seamless access to courses, assessments, grades, and learning records.",
+    "explanation": "It enables seamless access to courses, assessments, grades, and learning records."
+  },
+  {
+    "id": "fc54",
+    "courseId": "uil_edt_202",
+    "topic": "UIL-EDT 202",
+    "question": "Name two popular Cross-Platform Mobile Development Frameworks.",
+    "answer": "Flutter and React Native.",
+    "explanation": "Flutter and React Native."
+  }
+]
