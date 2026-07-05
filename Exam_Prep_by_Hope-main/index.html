@@ -1,0 +1,641 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ExamPrep - Student Dashboard</title>
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#ffeedd",
+              "on-primary-fixed": "#00174b",
+              "tertiary-fixed": "#ffddb8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "inverse-primary": "#b4c5ff",
+              "on-background": "#0b1c30",
+              "on-secondary-fixed-variant": "#005236",
+              secondary: "#006c49",
+              "on-tertiary-fixed": "#2a1700",
+              "surface-bright": "#f8f9ff",
+              "surface-variant": "#d3e4fe",
+              "primary-container": "#2563eb",
+              error: "#ba1a1a",
+              tertiary: "#784b00",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-low": "#eff4ff",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e5eeff",
+              "secondary-container": "#6cf8bb",
+              "primary-fixed-dim": "#b4c5ff",
+              surface: "#f8f9ff",
+              "outline-variant": "#c3c6d7",
+              "inverse-surface": "#213145",
+              "on-primary-container": "#eeefff",
+              "on-secondary-container": "#00714d",
+              primary: "#004ac6",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#d3e4fe",
+              "primary-fixed": "#dbe1ff",
+              "surface-tint": "#0053db",
+              outline: "#737686",
+              "on-secondary-fixed": "#002113",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#4edea3",
+              background: "#f8f9ff",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#434655",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#6ffbbe",
+              "surface-dim": "#cbdbf5",
+              "on-surface": "#0b1c30",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-container-high": "#dce9ff",
+              "tertiary-container": "#996100",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xl: "32px",
+              xxl: "48px",
+              xs: "4px",
+              md: "16px",
+              "container-max": "1280px",
+              base: "4px",
+              lg: "24px",
+              sm: "8px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "headline-sm": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              display: ["Inter"],
+              "body-md": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              display: [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .active-mode-btn {
+        background-color: #004ac6;
+        color: white;
+      }
+      .bento-card {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .bento-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm sticky top-0 z-50"
+    >
+      <div
+        class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16"
+      >
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+        >
+          ExamPrep By Hope
+        </div>
+        <nav class="hidden md:flex gap-xl items-center"></nav>
+        <div class="flex items-center gap-md">
+          <button
+            class="p-sm rounded-full hover:bg-surface-variant transition-colors"
+          ></button>
+          <div
+            class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A professional studio portrait of a young adult student looking confident and friendly. The lighting is soft and high-key, with a clean minimalist background that fits a modern academic software interface. The color palette is composed of soft blues and crisp whites to maintain brand consistency."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-kKm0zutRhEkKJsqT8PsomsLeYu3Yks7Bj3NnHWViWQ27m3xqHV_Ikhm6lhL7qmToD_I67PX-F6eYQJIXGnz1_iyElb-cNl4fJ3BGfS4xHPW5JED2U0b9vZpLOmjKfpy64v1mFrzjviqRx9RySJvnNcVLCGHpmvfAahnm_jRXUocyN2N4xG_07n8-AdYsWgd5msEZ9H-cjrYkO6CE5glG5quKYwdyxfn2FY_xD-gotu6t8fHX3Aa0gppdKHv9QGLOv93OcsyaVS-h"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="flex flex-1 max-w-container-max w-full mx-auto">
+      <!-- SideNavBar -->
+      <aside
+        class="hidden lg:flex flex-col h-[calc(100vh-64px)] sticky top-16 p-md bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-outline w-64"
+      >
+        <div class="mb-xl px-sm">
+          <h2
+            class="font-headline-sm text-headline-sm font-black text-primary dark:text-primary-fixed-dim"
+          >
+            Study Portal
+          </h2>
+          <p class="font-label-md text-label-md text-on-surface-variant">
+            Academic Excellence
+          </p>
+        </div>
+        <nav class="flex-1 space-y-xs">
+          <a
+            class="flex items-center gap-md p-md bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary font-bold rounded-lg transition-all active:scale-[0.98] duration-150"
+            href="examprep_dashboard.html"
+          >
+            <span class="material-symbols-outlined" data-icon="dashboard"
+              >dashboard</span
+            >
+            <span class="font-label-md text-label-md">Dashboard</span>
+          </a>
+        </nav>
+        <div class="mt-auto pt-md border-t border-outline-variant">
+          <a
+            class="flex items-center gap-md p-md text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-high rounded-lg transition-all active:scale-[0.98] duration-150"
+            href="#"
+          >
+            <span class="material-symbols-outlined" data-icon="settings"
+              >settings</span
+            >
+            <span class="font-label-md text-label-md">Settings</span>
+          </a>
+        </div>
+      </aside>
+      <!-- Main Content Area -->
+      <main class="flex-1 p-gutter md:p-xxl overflow-y-auto">
+        <!-- Welcome Message Section -->
+        <section class="mb-xl">
+          <div
+            class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-xl md:p-xxl shadow-lg"
+          >
+            <div class="relative z-10">
+              <h1 class="font-headline-lg text-headline-lg mb-sm">
+                Welcome back, Unilorite Scholar!
+              </h1>
+              <p class="font-body-lg text-body-lg opacity-90 max-w-xl">
+                You've mastered 0% of your current curriculum. Ready to tackle
+                today's mock exams or refresh with flashcards?
+              </p>
+              <div class="mt-lg flex flex-wrap gap-md">
+                <div
+                  class="bg-on-primary/10 backdrop-blur-sm p-md rounded-lg border border-on-primary/20"
+                >
+                  <p
+                    class="text-label-sm font-label-sm uppercase tracking-wider opacity-80"
+                  >
+                    Streak
+                  </p>
+                  <p class="text-headline-sm font-headline-sm">1 Days 🔥</p>
+                </div>
+                <div
+                  class="bg-on-primary/10 backdrop-blur-sm p-md rounded-lg border border-on-primary/20"
+                >
+                  <p
+                    class="text-label-sm font-label-sm uppercase tracking-wider opacity-80"
+                  >
+                    Next Exam
+                  </p>
+                  <p class="text-headline-sm font-headline-sm">Tommorow</p>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative Element -->
+            <div
+              class="absolute -right-12 -top-12 w-64 h-64 bg-primary-container rounded-full opacity-20 blur-3xl"
+            ></div>
+          </div>
+        </section>
+        <!-- Course Selection Bento Grid -->
+        <section
+          id="course-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mb-xxl"
+        >
+          <!-- Course Card 1 -->
+          <div
+            class="bento-card group flex flex-col p-lg rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm cursor-pointer"
+          >
+            <div class="flex justify-between items-start mb-md">
+              <div
+                class="p-md rounded-lg bg-primary-container text-on-primary-container"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >functions</span
+                >
+              </div>
+              <span
+                class="px-sm py-xs bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded"
+                >Advanced</span
+              >
+            </div>
+            <h3 class="font-headline-sm text-headline-sm mb-xs">GST 212</h3>
+            <p
+              class="text-on-surface-variant font-label-md text-label-md mb-xl"
+            >
+              Philosophy, Logic and Human Existance
+            </p>
+            <div class="mt-auto">
+              <div class="flex justify-between items-end mb-sm">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                  >Mastery</span
+                >
+                <span class="text-label-sm font-label-sm text-primary font-bold"
+                  >78%</span
+                >
+              </div>
+              <div
+                class="h-2 w-full bg-surface-container rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-primary rounded-full"
+                  style="width: 78%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card 2 -->
+          <div
+            class="bento-card group flex flex-col p-lg rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm"
+            data-course="uil_edt_202"
+          >
+            <div class="flex justify-between items-start mb-md">
+              <div
+                class="p-md rounded-lg bg-tertiary-fixed text-on-tertiary-fixed"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >science</span
+                >
+              </div>
+              <span
+                class="px-sm py-xs bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded"
+                >Intermediate</span
+              >
+            </div>
+            <h3 class="font-headline-sm text-headline-sm mb-xs">UIL-EDT 202</h3>
+            <p
+              class="text-on-surface-variant font-label-md text-label-md mb-xl"
+            >
+              Mobile Application Development for Instruction
+            </p>
+            <div class="mt-auto">
+              <div class="flex justify-between items-end mb-sm">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                  >Mastery</span
+                >
+                <span class="text-label-sm font-label-sm text-primary font-bold"
+                  >42%</span
+                >
+              </div>
+              <div
+                class="h-2 w-full bg-surface-container rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-primary rounded-full"
+                  style="width: 42%"
+                ></div>
+              </div>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <a
+                href="mock_exam_active_quiz.html?course=uil_edt_202"
+                class="inline-block bg-blue-600 text-white px-3 py-1 rounded"
+                >Start Mock</a
+              >
+              <a
+                href="#"
+                class="inline-block bg-green-600 text-white px-3 py-1 rounded"
+                >Study UIL-EDT 202</a
+              >
+            </div>
+          </div>
+          <!-- Course Card 3 -->
+          <div
+            class="bento-card group flex flex-col p-lg rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm cursor-pointer"
+          >
+            <div class="flex justify-between items-start mb-md">
+              <div
+                class="p-md rounded-lg bg-secondary-container text-on-secondary-container"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >history_edu</span
+                >
+              </div>
+              <span
+                class="px-sm py-xs bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded"
+                >Core</span
+              >
+            </div>
+            <h3 class="font-headline-sm text-headline-sm mb-xs">EDT 202</h3>
+            <p
+              class="text-on-surface-variant font-label-md text-label-md mb-xl"
+            >
+              Educational Technology in Schools and Workplaces
+            </p>
+            <div class="mt-auto">
+              <div class="flex justify-between items-end mb-sm">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                  >Mastery</span
+                >
+                <span class="text-label-sm font-label-sm text-primary font-bold"
+                  >91%</span
+                >
+              </div>
+              <div
+                class="h-2 w-full bg-surface-container rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-secondary rounded-full"
+                  style="width: 91%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card 4 -->
+          <div
+            class="bento-card group flex flex-col p-lg rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm cursor-pointer"
+          >
+            <div class="flex justify-between items-start mb-md">
+              <div
+                class="p-md rounded-lg bg-primary-fixed text-on-primary-fixed"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >terminal</span
+                >
+              </div>
+              <span
+                class="px-sm py-xs bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded"
+                >Advanced</span
+              >
+            </div>
+            <h3 class="font-headline-sm text-headline-sm mb-xs">GST 112</h3>
+            <p
+              class="text-on-surface-variant font-label-md text-label-md mb-xl"
+            >
+              Nigerian's People &amp; Culture
+            </p>
+            <div class="mt-auto">
+              <div class="flex justify-between items-end mb-sm">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant"
+                  >Mastery</span
+                >
+                <span class="text-label-sm font-label-sm text-primary font-bold"
+                  >15%</span
+                >
+              </div>
+              <div
+                class="h-2 w-full bg-surface-container rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-primary rounded-full"
+                  style="width: 15%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card 5 - Coming Soon/Disabled Style -->
+          <div
+            class="group flex flex-col p-lg rounded-xl bg-surface-container-low border border-outline-variant opacity-60 shadow-none cursor-not-allowed"
+          >
+            <div class="flex justify-between items-start mb-md">
+              <div
+                class="p-md rounded-lg bg-outline-variant text-on-surface-variant"
+              >
+                <span class="material-symbols-outlined">psychology</span>
+              </div>
+              <span
+                class="px-sm py-xs bg-outline-variant/20 text-on-surface-variant font-label-sm text-label-sm rounded"
+                >Soon</span
+              >
+            </div>
+            <h3 class="font-headline-sm text-headline-sm mb-xs">UIL-EDT 204</h3>
+            <p
+              class="text-on-surface-variant font-label-md text-label-md mb-xl"
+            >
+              Assistive Technology and Accessible Instructional Materials
+            </p>
+            <div class="mt-auto">
+              <div
+                class="h-2 w-full bg-surface-variant rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-outline-variant rounded-full"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card 6 - Add New Course -->
+          <div
+            class="flex flex-col items-center justify-center p-lg rounded-xl border-2 border-dashed border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer group"
+          >
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-variant group-hover:bg-primary-container text-on-surface-variant group-hover:text-on-primary-container mb-md transition-colors"
+            >
+              <span class="material-symbols-outlined">add</span>
+            </div>
+            <p
+              class="font-label-md text-label-md text-on-surface-variant font-bold"
+            >
+              Browse More Courses
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline"
+    >
+      <div
+        class="w-full py-lg px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto"
+      >
+        <div class="mb-md md:mb-0">
+          <span
+            class="font-headline-sm text-headline-sm text-on-surface dark:text-inverse-on-surface"
+            >ExamPrep</span
+          >
+          <p
+            class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant mt-xs"
+          >
+            © 2026 HopeTech Academcy. Built for focused learning.
+          </p>
+        </div>
+        <div class="flex gap-xl">
+          <a
+            class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Help Center</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      window.location.href = "/index.html";
+      function toggleMode(mode) {
+        const mockBtn = document.getElementById("mode-mock");
+        const flashBtn = document.getElementById("mode-flash");
+
+        if (mode === "mock") {
+          mockBtn.classList.add("active-mode-btn");
+          mockBtn.classList.remove(
+            "text-on-surface-variant",
+            "hover:bg-surface-variant",
+          );
+          flashBtn.classList.remove("active-mode-btn");
+          flashBtn.classList.add(
+            "text-on-surface-variant",
+            "hover:bg-surface-variant",
+          );
+        } else {
+          flashBtn.classList.add("active-mode-btn");
+          flashBtn.classList.remove(
+            "text-on-surface-variant",
+            "hover:bg-surface-variant",
+          );
+          mockBtn.classList.remove("active-mode-btn");
+          mockBtn.classList.add(
+            "text-on-surface-variant",
+            "hover:bg-surface-variant",
+          );
+        }
+      }
+    </script>
+    <script src="./data/data-loader.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const data = await window.ExamPrepData.load();
+        const grid = document.getElementById("course-grid");
+        if (!grid) return;
+
+        grid.innerHTML = data.courses
+          .map((course) => {
+            const hasFlashcards = course.id === "uil_edt_202";
+            return `
+              <div class="bento-card group flex flex-col p-lg rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm">
+                <div class="flex justify-between items-start mb-md">
+                  <div class="p-md rounded-lg ${course.accentClass || "bg-primary-container text-on-primary-container"}">
+                    <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1">${course.icon || "school"}</span>
+                  </div>
+                  <span class="px-sm py-xs bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded">${course.level || "Core"}</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm mb-xs">${course.title}</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md mb-xl">${course.description}</p>
+                <div class="mt-auto flex flex-col gap-2">
+                  <div class="flex justify-between items-end mb-sm">
+                    <span class="text-label-sm font-label-sm text-on-surface-variant">Mastery</span>
+                    <span class="text-label-sm font-label-sm text-primary font-bold">${course.mastery || 0}%</span>
+                  </div>
+                  <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full" style="width: ${course.mastery || 0}%"></div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <a
+                      href="${course.id === "uil_edt_202" ? `mock_exam_active_quiz.html?course=${course.id}` : `#`}"
+                      class="inline-block px-3 py-1 rounded ${course.id === "uil_edt_202" ? "bg-blue-600 text-white" : "bg-surface-container text-on-surface-variant border border-outline-variant cursor-not-allowed opacity-50"}"
+                      ${course.id === "uil_edt_202" ? "" : 'aria-disabled="true" tabindex="-1"'}
+                    >Start Mock</a>
+                    ${hasFlashcards ? `<a href="flashcards_study_mode.html?course=${course.id}" class="inline-block bg-green-600 text-white px-3 py-1 rounded">Study ${course.title}</a>` : ""}
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+      });
+    </script>
+  </body>
+</html>
