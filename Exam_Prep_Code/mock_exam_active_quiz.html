@@ -1,0 +1,754 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ExamPrep | Mock Exam</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#ffeedd",
+              "on-primary-fixed": "#00174b",
+              "tertiary-fixed": "#ffddb8",
+              "on-tertiary-fixed-variant": "#653e00",
+              "inverse-primary": "#b4c5ff",
+              "on-background": "#0b1c30",
+              "on-secondary-fixed-variant": "#005236",
+              secondary: "#006c49",
+              "on-tertiary-fixed": "#2a1700",
+              "surface-bright": "#f8f9ff",
+              "surface-variant": "#d3e4fe",
+              "primary-container": "#2563eb",
+              error: "#ba1a1a",
+              tertiary: "#784b00",
+              "tertiary-fixed-dim": "#ffb95f",
+              "surface-container-low": "#eff4ff",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e5eeff",
+              "secondary-container": "#6cf8bb",
+              "primary-fixed-dim": "#b4c5ff",
+              surface: "#f8f9ff",
+              "outline-variant": "#c3c6d7",
+              "inverse-surface": "#213145",
+              "on-primary-container": "#eeefff",
+              "on-secondary-container": "#00714d",
+              primary: "#004ac6",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#d3e4fe",
+              "primary-fixed": "#dbe1ff",
+              "surface-tint": "#0053db",
+              outline: "#737686",
+              "on-secondary-fixed": "#002113",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#4edea3",
+              background: "#f8f9ff",
+              "on-secondary": "#ffffff",
+              "on-surface-variant": "#434655",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#6ffbbe",
+              "surface-dim": "#cbdbf5",
+              "on-surface": "#0b1c30",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-container-high": "#dce9ff",
+              "tertiary-container": "#996100",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.8px",
+              xl: "12px",
+              full: "9999px",
+            },
+            spacing: {
+              xl: "32px",
+              xxl: "48px",
+              xs: "4px",
+              md: "16px",
+              "container-max": "1280px",
+              base: "4px",
+              lg: "24px",
+              sm: "8px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "headline-sm": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              display: ["Inter"],
+              "body-md": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-lg": ["Inter"],
+            },
+            fontSize: {
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              display: [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-sm": ["12px", { lineHeight: "1", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f9ff;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .active-option {
+        border-color: #004ac6;
+        background-color: #e5eeff;
+      }
+      .flagged {
+        color: #ba1a1a;
+      }
+      .answer-choice:hover {
+        border-color: #004ac6;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c3c6d7;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+      >
+        <div>
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600"
+          >
+            ExamPrep
+          </p>
+          <h1 class="text-xl font-bold text-slate-900">
+            UIL-EDT 202 Mock Exam
+          </h1>
+          <p class="text-sm text-slate-600">
+            70 questions • 25-minute timer • one attempt
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="rounded-full border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            onclick="window.location.href = 'examprep_dashboard.html'"
+          >
+            Back to Dashboard
+          </button>
+          <div
+            class="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700"
+          >
+            <span id="exam-timer" class="font-semibold">25:00</span>
+            <span class="ml-1">left</span>
+          </div>
+          <div
+            class="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700"
+          >
+            <span id="progress-summary">0 / 70 answered</span>
+          </div>
+          <button
+            class="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+            onclick="toggleModal('submit-modal')"
+          >
+            Finish Exam
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:flex-row lg:px-8 lg:py-8"
+    >
+      <section class="flex-1">
+        <div
+          class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+        >
+          <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500"
+              >
+                How this works
+              </p>
+              <h2 class="text-lg font-semibold text-slate-900">
+                Pick the best answer for each question
+              </h2>
+            </div>
+            <div
+              class="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700"
+            >
+              <span id="question-progress">Question 1 of 70</span>
+            </div>
+          </div>
+
+          <div class="mb-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div
+              class="mb-2 flex items-center justify-between text-sm text-slate-600"
+            >
+              <span>Progress</span>
+              <span id="progress-meter-label">0% complete</span>
+            </div>
+            <div class="h-2.5 w-full rounded-full bg-slate-200">
+              <div
+                id="progress-meter"
+                class="h-2.5 w-0 rounded-full bg-blue-600"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="mb-5 rounded-2xl border border-slate-200 bg-white p-4 sm:p-5"
+          >
+            <div class="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <p
+                  id="question-counter"
+                  class="mb-2 inline-flex rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700"
+                >
+                  Question 1
+                </p>
+                <h3
+                  id="question-title"
+                  class="text-xl font-semibold leading-8 text-slate-900"
+                >
+                  Loading question...
+                </h3>
+              </div>
+              <button
+                class="rounded-full border border-slate-200 p-2 text-slate-500 transition hover:border-red-300 hover:text-red-500"
+                id="flag-toggle"
+                onclick="toggleFlag()"
+              >
+                <span class="material-symbols-outlined" id="flag-icon"
+                  >flag</span
+                >
+              </button>
+            </div>
+
+            <div id="quiz-options" class="space-y-3"></div>
+          </div>
+
+          <div class="mb-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div
+              class="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-700"
+            >
+              <span class="material-symbols-outlined text-blue-600"
+                >lightbulb</span
+              >
+              <span>Study hint</span>
+            </div>
+            <p id="quiz-hint" class="text-sm leading-6 text-slate-600">
+              Loading hint...
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+        >
+          <button
+            id="prev-question"
+            class="flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            onclick="goToQuestion(currentQuestionIndex - 1)"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+            Previous
+          </button>
+          <div class="text-sm text-slate-500">
+            Answer each question before moving on
+          </div>
+          <button
+            id="next-question"
+            class="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+            onclick="goToQuestion(currentQuestionIndex + 1)"
+          >
+            Next
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </section>
+
+      <aside class="w-full lg:w-80">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">Question map</h3>
+              <p class="text-sm text-slate-500">
+                Tap a number to jump to a question
+              </p>
+            </div>
+            <div
+              class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500"
+            >
+              Review
+            </div>
+          </div>
+          <div id="question-review-grid" class="grid grid-cols-5 gap-2"></div>
+          <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-600">
+            <div class="rounded-lg bg-slate-50 p-2">Answered</div>
+            <div
+              class="rounded-lg border border-blue-200 bg-blue-50 p-2 text-blue-700"
+            >
+              Current
+            </div>
+            <div class="rounded-lg border border-slate-200 bg-white p-2">
+              Unanswered
+            </div>
+            <div
+              class="rounded-lg border border-red-200 bg-red-50 p-2 text-red-600"
+            >
+              Flagged
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="fixed inset-0 z-[100] hidden" id="submit-modal">
+      <div
+        class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
+        onclick="toggleModal('submit-modal')"
+      ></div>
+      <div
+        class="absolute left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-2xl"
+      >
+        <div class="mb-4 flex items-center justify-center">
+          <div class="rounded-full bg-blue-50 p-3 text-blue-600">
+            <span class="material-symbols-outlined text-[28px]">task_alt</span>
+          </div>
+        </div>
+        <h2 class="text-center text-xl font-semibold text-slate-900">
+          Finish your UIL-EDT 202 mock exam?
+        </h2>
+        <p class="mt-3 text-center text-sm leading-6 text-slate-600">
+          You have
+          <span id="submit-answered" class="font-semibold text-slate-900"
+            >0</span
+          >
+          answered,
+          <span id="submit-unanswered" class="font-semibold text-slate-900"
+            >70</span
+          >
+          unanswered, and
+          <span id="submit-flagged" class="font-semibold text-red-600">0</span>
+          flagged.
+        </p>
+        <div class="mt-5 rounded-xl bg-slate-50 p-4 text-sm text-slate-700">
+          <p class="font-semibold text-slate-900">Results preview</p>
+          <p id="submit-summary" class="mt-2 leading-6">
+            Complete the exam to see your score.
+          </p>
+        </div>
+        <div class="mt-6 flex gap-3">
+          <button
+            class="flex-1 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+            onclick="toggleModal('submit-modal')"
+          >
+            Keep working
+          </button>
+          <button
+            class="flex-1 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+            onclick="submitExam()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed bottom-6 right-6 z-50 translate-y-20 opacity-0 transition-all duration-300"
+      id="toast"
+    >
+      <div
+        class="flex items-center gap-3 rounded-full bg-slate-900 px-4 py-3 text-sm text-white shadow-lg"
+      >
+        <span class="material-symbols-outlined" id="toast-icon"
+          >check_circle</span
+        >
+        <span id="toast-message">Saved your progress.</span>
+      </div>
+    </div>
+
+    <script src="./data/uil_edt_202_questions.js"></script>
+    <script src="./data/data-loader.js"></script>
+    <script>
+      let questions = [];
+      let currentQuestionIndex = 0;
+      const selectedAnswers = {};
+      const flaggedQuestions = new Set();
+      let timeLeft = 25 * 60;
+      let examTimerInterval = null;
+      let examSubmitted = false;
+
+      function normalizeQuestion(question) {
+        if (question && Array.isArray(question.options) && question.title) {
+          return question;
+        }
+        if (question && question.choices) {
+          return {
+            id: question.id,
+            title: question.question,
+            options: Object.entries(question.choices).map(([id, text]) => ({
+              id,
+              text,
+              isCorrect: id === question.answer,
+            })),
+            explanation:
+              question.explanation ||
+              `The correct answer is ${question.answer}.`,
+            hint:
+              question.hint || "Review the concept carefully before answering.",
+          };
+        }
+        return question;
+      }
+
+      async function initQuiz() {
+        const params = new URLSearchParams(window.location.search);
+        const courseParam = params.get("course") || "uil_edt_202";
+        const data = await window.ExamPrepData.load();
+
+        let bank = null;
+        if (
+          courseParam === "uil_edt_202" &&
+          typeof window !== "undefined" &&
+          window.UIL_EDT_202
+        ) {
+          bank = window.UIL_EDT_202;
+        }
+
+        if (bank && Array.isArray(bank.questions) && bank.questions.length) {
+          questions = (
+            bank.getRandomQuestions
+              ? bank.getRandomQuestions(bank.maxQuestionsPerAttempt || 70)
+              : []
+          ).map(normalizeQuestion);
+        } else {
+          questions = (data.questions || []).map(normalizeQuestion);
+        }
+
+        if (!questions.length) {
+          document.getElementById("question-title").textContent =
+            "No questions are available right now.";
+          document.getElementById("quiz-options").innerHTML =
+            "<p class='text-sm text-slate-600'>Add questions to the UIL-EDT 202 bank or data/questions.json.</p>";
+          return;
+        }
+
+        questions = questions.slice(0, 70);
+        startTimer();
+        renderQuestion();
+        renderReviewGrid();
+        updateProgress();
+      }
+
+      function renderQuestion() {
+        const question = questions[currentQuestionIndex];
+        if (!question) return;
+
+        document.getElementById("question-counter").textContent =
+          `Question ${currentQuestionIndex + 1}`;
+        document.getElementById("question-progress").textContent =
+          `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+        document.getElementById("question-title").textContent = question.title;
+        document.getElementById("quiz-hint").textContent =
+          question.hint || "Review the concept carefully before answering.";
+
+        const optionsContainer = document.getElementById("quiz-options");
+        optionsContainer.innerHTML = "";
+
+        if (!Array.isArray(question.options) || !question.options.length) {
+          optionsContainer.innerHTML =
+            '<p class="text-sm text-slate-600">No answer options are available for this question.</p>';
+        } else {
+          question.options.forEach((option, index) => {
+            const letter = ["A", "B", "C", "D"][index] || `${index + 1}`;
+            const isSelected = selectedAnswers[question.id] === option.id;
+
+            const optionButton = document.createElement("button");
+            optionButton.type = "button";
+            optionButton.className =
+              "answer-choice flex w-full items-start gap-3 rounded-xl border p-4 text-left transition ";
+            optionButton.classList.add(
+              "border-slate-200",
+              "bg-white",
+              "hover:border-blue-300",
+              "hover:bg-slate-50",
+            );
+            if (isSelected) {
+              optionButton.classList.remove("border-slate-200", "bg-white");
+              optionButton.classList.add("border-blue-600", "bg-blue-50");
+            }
+
+            const badge = document.createElement("span");
+            badge.className =
+              "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border font-semibold";
+            badge.classList.add(
+              isSelected ? "border-blue-600" : "border-slate-200",
+              isSelected ? "bg-blue-600" : "bg-slate-50",
+              isSelected ? "text-white" : "text-slate-700",
+            );
+            badge.textContent = letter;
+
+            const label = document.createElement("span");
+            label.className = "text-sm leading-6 text-slate-700";
+            label.textContent = option.text;
+
+            optionButton.appendChild(badge);
+            optionButton.appendChild(label);
+            optionButton.addEventListener("click", () =>
+              selectOption(option.id),
+            );
+
+            optionsContainer.appendChild(optionButton);
+          });
+        }
+
+        updateNavigation();
+        updateProgress();
+      }
+
+      function selectOption(optionId) {
+        const question = questions[currentQuestionIndex];
+        if (!question) return;
+
+        selectedAnswers[question.id] = optionId;
+        renderQuestion();
+        renderReviewGrid();
+        updateProgress();
+        showToast("Answer saved", "check_circle");
+      }
+
+      function goToQuestion(index) {
+        if (!questions.length) return;
+        currentQuestionIndex = Math.max(
+          0,
+          Math.min(index, questions.length - 1),
+        );
+        renderQuestion();
+        renderReviewGrid();
+      }
+
+      function updateNavigation() {
+        const prevButton = document.getElementById("prev-question");
+        const nextButton = document.getElementById("next-question");
+        prevButton.disabled = currentQuestionIndex === 0;
+        prevButton.classList.toggle("opacity-50", currentQuestionIndex === 0);
+        nextButton.disabled = currentQuestionIndex === questions.length - 1;
+        nextButton.classList.toggle(
+          "opacity-50",
+          currentQuestionIndex === questions.length - 1,
+        );
+      }
+
+      function updateProgress() {
+        const answeredCount = Object.keys(selectedAnswers).length;
+        const percent =
+          Math.round((answeredCount / questions.length) * 100) || 0;
+        document.getElementById("progress-summary").textContent =
+          `${answeredCount} / ${questions.length} answered`;
+        document.getElementById("progress-meter").style.width = `${percent}%`;
+        document.getElementById("progress-meter-label").textContent =
+          `${percent}% complete`;
+        document.getElementById("submit-answered").textContent = answeredCount;
+        document.getElementById("submit-unanswered").textContent =
+          questions.length - answeredCount;
+        document.getElementById("submit-flagged").textContent =
+          flaggedQuestions.size;
+      }
+
+      function startTimer() {
+        if (examTimerInterval) {
+          clearInterval(examTimerInterval);
+        }
+
+        const timerEl = document.getElementById("exam-timer");
+        if (!timerEl) return;
+
+        examTimerInterval = setInterval(() => {
+          timeLeft -= 1;
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          timerEl.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          timerEl.classList.toggle("text-red-600", timeLeft <= 60);
+          timerEl.classList.toggle("animate-pulse", timeLeft <= 60);
+
+          if (timeLeft <= 0) {
+            clearInterval(examTimerInterval);
+            if (!examSubmitted) {
+              submitExam(true);
+            }
+          }
+        }, 1000);
+      }
+
+      function renderReviewGrid() {
+        const grid = document.getElementById("question-review-grid");
+        if (!grid) return;
+
+        grid.innerHTML = questions
+          .map((question, index) => {
+            const isCurrent = index === currentQuestionIndex;
+            const isAnswered = Boolean(selectedAnswers[question.id]);
+            const isFlagged = flaggedQuestions.has(question.id);
+            let classes =
+              "flex aspect-square items-center justify-center rounded-lg border text-sm font-semibold";
+            if (isCurrent) {
+              classes += " border-blue-600 bg-blue-50 text-blue-700";
+            } else if (isFlagged) {
+              classes += " border-red-500 bg-red-50 text-red-600";
+            } else if (isAnswered) {
+              classes += " border-blue-600 bg-blue-600 text-white";
+            } else {
+              classes += " border-slate-200 bg-white text-slate-700";
+            }
+            return `<button class="${classes}" onclick="goToQuestion(${index})">${index + 1}</button>`;
+          })
+          .join("");
+      }
+
+      function toggleFlag() {
+        const question = questions[currentQuestionIndex];
+        if (!question) return;
+        if (flaggedQuestions.has(question.id)) {
+          flaggedQuestions.delete(question.id);
+          document.getElementById("flag-icon").style.fontVariationSettings =
+            '"FILL" 0';
+          showToast("Removed from review", "flag");
+        } else {
+          flaggedQuestions.add(question.id);
+          document.getElementById("flag-icon").style.fontVariationSettings =
+            '"FILL" 1';
+          showToast("Marked for review", "flag");
+        }
+        renderReviewGrid();
+        updateProgress();
+      }
+
+      function toggleModal(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+
+      function showToast(message, icon) {
+        const toast = document.getElementById("toast");
+        const toastIcon = document.getElementById("toast-icon");
+        const toastMessage = document.getElementById("toast-message");
+        toastIcon.textContent = icon;
+        toastMessage.textContent = message;
+        toast.classList.remove("translate-y-20", "opacity-0");
+        setTimeout(() => {
+          toast.classList.add("translate-y-20", "opacity-0");
+        }, 2500);
+      }
+
+      function submitExam(autoSubmitted = false) {
+        if (examSubmitted) return;
+        examSubmitted = true;
+
+        let correct = 0;
+        let incorrect = 0;
+        questions.forEach((question) => {
+          const selected = selectedAnswers[question.id];
+          const correctOption = question.options.find(
+            (option) => option.isCorrect,
+          );
+          if (selected && selected === correctOption?.id) {
+            correct += 1;
+          } else if (selected) {
+            incorrect += 1;
+          }
+        });
+        const unanswered = questions.length - correct - incorrect;
+        const examResult = {
+          course: "UIL-EDT 202",
+          totalQuestions: questions.length,
+          correct,
+          incorrect,
+          unanswered,
+          flagged: flaggedQuestions.size,
+          questions,
+          answers: selectedAnswers,
+          submittedAt: new Date().toISOString(),
+        };
+
+        localStorage.setItem(
+          "uil_edt_202_last_exam",
+          JSON.stringify(examResult),
+        );
+        document.getElementById("submit-summary").textContent =
+          `You got ${correct} correct, ${incorrect} incorrect, and ${unanswered} unanswered.`;
+        if (!autoSubmitted) {
+          toggleModal("submit-modal");
+          showToast("Exam submitted", "task_alt");
+        }
+        window.location.href = "mock_exam_results.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", initQuiz);
+    </script>
+  </body>
+</html>
